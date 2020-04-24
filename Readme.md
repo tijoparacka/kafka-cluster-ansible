@@ -27,7 +27,7 @@ https://github.com/116davinder/zookeeper-cluster-ansible
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 * Update Required vars in ```inventory/<environment>/cluster.ini``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterSetup.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user >  --private-key <key path eg: ~/Documents/ec2.key> clusterSetup.yml```
 
 ### **To add new broker to cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
