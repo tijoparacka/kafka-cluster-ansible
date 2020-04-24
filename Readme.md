@@ -33,38 +33,38 @@ https://github.com/tijoparacka/zookeeper-cluster-ansible
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 * Update Required vars in ```inventory/<environment>/cluster.ini``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterAddNodes.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key>  clusterAddNodes.yml```
 
 ### **To Upgrade Kafka Version**
 * download kafka tar in your local ansible box.
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 * Update Required vars in ```inventory/<environment>/cluster.ini``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterUpgrade.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key> clusterUpgrade.yml```
 
 ### **Rolling restart cluster**
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterRollingRestart.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key> clusterRollingRestart.yml```
 
 ### **To add newrelic monitoring to cluster**
 * add newrelic rpms to `files` folder.
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterNewRelicSetup.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key> clusterNewRelicSetup.yml```
 
 ### **To update broker settings only of cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterBrokerProperties.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key> clusterBrokerProperties.yml```
 
 ### **To update jvm settings only of cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterJvmConfigs.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key>  clusterJvmConfigs.yml```
 
 ### **To update logging settings only of cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterLogging.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key>  clusterLogging.yml```
 
 ### **To upgrade java version of cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
@@ -74,12 +74,12 @@ https://github.com/tijoparacka/zookeeper-cluster-ansible
 ### **To remove old version files of kafka from cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterRemoveOldVersion.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key>  clusterRemoveOldVersion.yml```
 
 ### **To remove kafka broker from cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/all.yml``` .
 
-```ansible-playbook -i inventory/<environment>/cluster.ini clusterRemoveNodes.yml```
+```ansible-playbook -i inventory/<environment>/cluster.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key> clusterRemoveNodes.yml```
 
 ## Apache Kafka Mirror Maker Playbooks
 
@@ -87,17 +87,17 @@ https://github.com/tijoparacka/zookeeper-cluster-ansible
 * Update Required vars in ```inventory/<environment>/group_vars/kafka-mirror-maker.yml``` .
 * Update Required vars in ```inventory/<environment>/mirror-maker.ini``` .
 
-```ansible-playbook -i inventory/<environment>/mirror-maker.ini clusterKafkaMirrorMaker.yml```
+```ansible-playbook -i inventory/<environment>/mirror-maker.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key>  clusterKafkaMirrorMaker.yml```
 
 ### **To Remove nodes from cluster**
 * Update Required vars in ```inventory/<environment>/group_vars/kafka-mirror-maker.yml``` .
 * Update Required vars in ```inventory/<environment>/mirror-maker.ini``` .
 
-```ansible-playbook -i inventory/<environment>/mirror-maker.ini clusterKafkaMirrorMakerRemoveNodes.yml```
+```ansible-playbook -i inventory/<environment>/mirror-maker.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key>  clusterKafkaMirrorMakerRemoveNodes.yml```
 
 ### **Rolling restart cluster**
 
-```ansible-playbook -i inventory/<environment>/mirror-maker.ini clusterKafkaMirrorMakerRollingRestart.yml```
+```ansible-playbook -i inventory/<environment>/mirror-maker.ini -u <user eg ec2-user > --private-key <key path eg: ~/Documents/ec2.key> clusterKafkaMirrorMakerRollingRestart.yml```
 
 
 ### **Tested OS**
