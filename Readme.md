@@ -17,7 +17,7 @@ It is group of playbooks to manage apache kafka. It is also 100% compliant with 
 ## **Extra**
 * **Open Source Web-UI** https://github.com/yahoo/kafka-manager
 * **Zookeeper Installation**
-https://github.com/116davinder/zookeeper-cluster-ansible
+https://github.com/tijoparacka/zookeeper-cluster-ansible
 
 # **Production Environment Setup**
 
