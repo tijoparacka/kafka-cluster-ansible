@@ -10,13 +10,13 @@ kafkaUser: kafka
 kafkaGroupId: 7000
 kafkaUserId: 7000
 
-kafkaInstallDir: /kafka
+kafkaInstallDir: /opt/kafka
 kafkaDataDir: "{{ kafkaInstallDir }}/kafka-data"
 kafkaLogDir: "{{ kafkaInstallDir }}/kafka-logs"
 
 # JVM Settings
 # total memory * 0.25 or 25% or total memory only
-# Rest 75% will be used for Caching 
+# Rest 75% will be used for Caching
 kafkaXms: 6G                                                    # 6GB is max recommended for production kafka
 kafkaXmx: "{{ kafkaXms }}"
 kafkaPort: 9092
@@ -33,7 +33,7 @@ kafkaClusterName: development-kafka
 
 kafkaVersion: 2.2.1
 kafkaScalaVersion: 2.12
-kafkaTarLocation: "/home/davinderpal/packages/kafka_{{ kafkaScalaVersion }}-{{ kafkaVersion }}.tgz"
+kafkaTarLocation: "/opt/packages/kafka_{{ kafkaScalaVersion }}-{{ kafkaVersion }}.tgz"
 
 # below will be used while decommission/downgrade only
 kafkaOldVersion: 2.2.0
@@ -41,7 +41,7 @@ kafkaOldScalaVersion: 2.12
 
 ### Production Optimization Parameters
 ### if nothing is set then it will use default values.
-kafkaDefaultReplicationFactor: 3
+kafkaDefaultReplicationFactor: 2
 kafkaMinInsyncReplicas: "{{ kafkaDefaultReplicationFactor | int - 1 }}"
 kafkaBackgroundThread: 10
 kafkaMessagesMaxBytes: 1000012 # 1MB approx
@@ -55,7 +55,7 @@ kafkaSocetReceiveBufferBytes: 102400
 kafkaSocetRequestMaxBytes: 104857600
 kafkaNumPartitions: 1
 kafkaNumRecoveryThreadsPerDataDir: 1
-kafkaOffsetsTopicReplicationFactor: 3
+kafkaOffsetsTopicReplicationFactor: 1
 kafkaTransactionStateLogReplicationFactor: "{{ kafkaOffsetsTopicReplicationFactor}}"
 kafkaTransactionStateLogMinIsr: "{{  kafkaOffsetsTopicReplicationFactor }}"
 kafkaLogFlushIntervalMessages: 10000

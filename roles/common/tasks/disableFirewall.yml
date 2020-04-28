@@ -10,6 +10,7 @@
       enabled: false
       state: stopped
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  ignore_errors: yes
 
 - name: taking iptables backup | /opt/iptables-{{ ansible_date_time.date }}.bak
   shell: "iptables-save > /opt/iptables-{{ ansible_date_time.date }}.bak"
