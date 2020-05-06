@@ -13,6 +13,7 @@
     group: "{{ kafkaGroup }}"
     validate_certs: false
     keep_newer: yes
+    remote_src: yes
     creates: "{{ kafkaInstallDir }}/kafka_{{ kafkaScalaVersion }}-{{ kafkaVersion }}/bin"
 
 - name: Ensuring permissions on unarchieved files
